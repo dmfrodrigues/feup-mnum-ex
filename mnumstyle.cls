@@ -1,6 +1,9 @@
 \NeedsTeXFormat{LaTeX2e}
 \ProvidesClass{mnumstyle}
+
 \LoadClass[a4paper]{book}
+\raggedbottom
+
 \RequirePackage[top=25mm,bottom=25mm,left=25mm,right=25mm]{geometry}
 \RequirePackage[T1]{fontenc}
 \RequirePackage[utf8]{inputenc}
@@ -9,6 +12,7 @@
 \usepackage{enumitem}
 \usepackage{amssymb,graphicx}
 \usepackage[retain-explicit-plus,retain-zero-exponent]{siunitx}
+\usepackage{hyperref}
 % Entire row is bold
 \usepackage{tabularx}
 \newcommand\setrow[1]{\gdef\rowmac{#1}#1\ignorespaces}
