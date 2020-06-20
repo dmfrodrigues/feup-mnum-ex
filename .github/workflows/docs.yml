@@ -1,0 +1,40 @@
+name: docs
+
+on:
+  push:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Install latex
+      run: sudo apt install -y latexmk texlive-latex-extra #texlive-science
+
+    - name: Compile exams
+      run: make exam/MNUM_resol_exam.pdf
+    - name: Upload exams
+      uses: actions/upload-artifact@v2
+      with:
+        name: MNUM_resol_exam.pdf
+        path: exam/MNUM_resol_exam.pdf
+
+    - name: Compile test1
+      run: make tests/1/MNUM_resol_teste1.pdf
+    - name: Upload exams
+      uses: actions/upload-artifact@v2
+      with:
+        name: MNUM_resol_teste1.pdf
+        path: tests/1/MNUM_resol_teste1.pdf
+
+    - name: Compile test2
+      run: make tests/2/MNUM_resol_teste2.pdf
+    - name: Upload exams
+      uses: actions/upload-artifact@v2
+      with:
+        name: MNUM_resol_teste2.pdf
+        path: tests/2/MNUM_resol_teste2.pdf
+
+
