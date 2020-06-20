@@ -1,0 +1,56 @@
+\setcounter{chapter}{11}
+\chapter{Teste 2 2012/13}
+{
+\renewcommand{\thesubsection}{\thesection\alph{subsection}}
+\section{Pergunta 1}
+\lstinputlisting[language=Python, caption=Programa 2012T2-1 (Python3)]{2012T2_1.py}
+Resposta: $10.65600$
+\section{Pergunta 2}
+\subsection{Item a}
+\lstinputlisting[language=Python, caption=Programa 2012T2-2a (Python3)]{2012T2_2a.py}
+\begin{center} \begin{tabular}{c | c}
+	$x_1$ & $x_2$ \\ \hline
+	0.20833  &       0.18335 \\
+	-0.16493 &       -0.17951 \\
+	-0.09621 &       -0.12476 \\
+	-0.14121 &       -0.13978
+\end{tabular} \end{center}
+\subsection{Item b}
+Quanto à convergência do processo iterativo, \textbf{o método converge porque em cada linha da matriz $A$, o módulo do elemento da diagonal principal é superior ao módulo da soma dos restantes elementos da linha}.
+\lstinputlisting[language=Maxima, caption=Input Maxima 2012T2-2b]{2012T2_2b.mc}
+\section{Pergunta 3}
+\lstinputlisting[language=Python, caption=Programa 2012T2-3 (Python3)]{2012T2_3.py}
+\subsection{Item a}
+\begin{alignat*}{2}
+	x_1 &= -4.37161 \\
+	x_2 &= -8.93251 \\
+	x_3 &= 28.84007
+\end{alignat*}
+\subsection{Item b}
+\begin{alignat*}{2}
+	(A+\delta A)(x+\delta x)=b+\delta b
+	&\iff A\,x+A\,\delta x+\delta A\, x + \delta A\, \delta x &&= b+\delta b\\
+	&\iff A\,\delta x+\delta A\, x + \delta A\, \delta x &&= \delta b\\
+	&\iff A\,\delta x+\delta A\, x &&= \delta b\\
+	&\iff A\,\delta x &&= \delta b - \delta A\, x
+\end{alignat*}
+\begin{alignat*}{2}
+	\delta x_1 &= 1.95975\\
+	\delta x_2 &= 3.37662\\
+	\delta x_3 &= -11.88426
+\end{alignat*}
+Pode concluir-se que a incógnita mais sensível a erros nos dados é $x_3$.
+\section{Pergunta 4}
+\begin{center} \begin{tabular}{l | c || l | c}
+	$h  =$ & 0.080000 & Usando $h  $, $v(1.8)=$ & 0.146712 \\
+	$h' =$ & 0.040000 & Usando $h' $, $v(1.8)=$ & 0.148542 \\
+	$h''=$ & 0.020000 & Usando $h''$, $v(1.8)=$ & 0.149530 \\
+           &          & $QC=$                   & 1.851401 \\
+           &          & $Erro=$                 & 0.000989
+\end{tabular} \end{center}
+\section{Pergunta 5}
+A não ser que numa das elipses de (b) haja referência a um caso base, o código em (b) não termina.\\
+Ignorando esse facto, existem dois aspetos diferentes entre os dois fragmentos de código: o cálculo da diferença entre iterações consecutivas, e o momento do incremento.\\
+Em (a), é calculada a diferença entre o valor atual e o valor anterior $S-S0$ para determinar o momento de paragem, enquanto que em (b) é usado o mesmo critério mas utilizando o valor que será incrementado $S0$. A estratégia de (a) conduz a maior erro numérico na determinação da diferença entre iterações consecutivas, dado que o valor da diferença pode ser relativamente pequeno quando comparado com os valores do integral, e que essa diferença é calculada entre o valor anterior e o valor anterior mais o incremento. Assim, em (b) o incremento possui apenas o erro associado ao seu cálculo, enquanto que em (a) existe mais uma parcela de erro associado a operações intermédias e desnecessárias. Isto significa que o momento de paragem pode ser determinado de forma diferente nos dois métodos por influência de erros, conduzindo naturalmente a valores diferentes dos resultados.\\
+Além disso, em (a) primeiro é realizado o incremento e depois é que é avaliado se esse incremento foi menor ou igual a $eps$, enquanto que em (b) é primeiro avaliado se o incremento é maior do que $eps$ e só depois é que é incrementado ao integral. Por este motivo, mesmo que não ocorram erros numéricos, os resultados são necessariamente diferentes.
+}

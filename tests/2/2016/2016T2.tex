@@ -1,0 +1,70 @@
+\setcounter{chapter}{15}
+\chapter{Teste 2 2016/17}
+{
+\renewcommand{\thesubsection}{\thesection\alph{subsection}}
+\section{Pergunta 1}
+\begin{center}
+\begin{minipage}[c]{0.5\textwidth}
+\begin{gather*}
+	f_1(t,C,T) = -e^{\left(\frac{-b}{T+273}\right)}\,C\\
+	f_2(t,C,T) = a\,e^{\left(\frac{-b}{T+273}\right)}\,C -b(T-20)
+\end{gather*}
+\end{minipage}%
+\begin{minipage}[c]{0.5\textwidth}
+\begin{gather*}
+	C' = f_1(t,C,T)\\
+	T' = f_2(t,C,T)
+\end{gather*}
+\end{minipage}
+\end{center}
+%\lstinputlisting[language=Python, caption=Programa 2016T2-1 (Python3)]{2016T2_1.py}
+\begin{center}
+\begin{minipage}[c]{0.5\textwidth}
+\subsection{Item a}
+\begin{center}\begin{tabular}{r | c c c}
+	iter. & $t$ & $C$ & $T$ \\ \hline
+	0     & 0.50000 & 2.00000 & 20.00000 \\
+	1     & 0.75000 & 1.50017 & 27.49744 \\
+	2     & 1.00000 & 1.12525 & 32.93377
+\end{tabular} \end{center}
+\end{minipage}%
+\begin{minipage}[c]{0.5\textwidth}
+\subsection{Item b}
+\begin{center}\begin{tabular}{r | c c c}
+	iter. & $t$ & $C$ & $T$ \\ \hline
+	0     & 0.50000 & 2.00000 & 20.00000 \\
+	1     & 0.75000 & 1.55775 & 26.54810 \\
+	2     & 1.00000 & 1.21329 & 31.48660
+\end{tabular} \end{center}
+\end{minipage}
+\end{center}
+\subsection{Item c}
+\begin{center} \begin{tabular}{ r | c || r | c}
+	$h' $ & 0.12500 & $C_{h'} $ & 1.17259 \\
+	$h''$ & 0.06250 & $C_{h''}$ & 1.19365 \\
+	      &         & Quociente de convergência & 2.24721 \\
+	      &         & Erro absoluto estimado & 0.02106
+\end{tabular} \end{center}
+\section{Pergunta 2}
+%\lstinputlisting[language=Python, caption=Programa 2016T2-2 (Python3)]{2016T2_2.py}
+\begin{alignat*}{2}
+	\text{valor do integral} &= 1.6687\\
+	\text{erro estimado}     &= 0.0322
+\end{alignat*}
+\section{Pergunta 3}
+Ver Pergunta \hyperref[ssec:17_5]{17.5}.
+\section{Pergunta 4}
+%\lstinputlisting[language=Python, caption=Programa 2016T2-4 (Python3)]{2016T2_4.py}
+A resposta correta é $T_2=16.08000$.
+
+\section{Pergunta 5}
+%\lstinputlisting[language=C++, caption=Programa 2016T2-5 (C++)]{2016T2_5.cpp}
+\begin{equation*}
+	x_1 = \begin{bmatrix}
+		0.41667\\
+		1.10000\\
+		2.53542\\
+		-0.09609
+	\end{bmatrix}
+\end{equation*}
+}

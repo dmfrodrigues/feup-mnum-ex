@@ -1,0 +1,109 @@
+\setcounter{chapter}{16}
+\chapter{Teste 2 2017/18}
+{
+\renewcommand{\thesubsection}{\thesection\alph{subsection}}
+\section{Pergunta 1}
+\begin{equation*}
+	Ax=b
+\end{equation*}
+\begin{alignat*}{2}
+	(A+\delta A)(x+\delta x) = (b+\delta b)
+	&\iff Ax+A\delta x + \delta A x + \delta A \delta x = b + \delta b \\
+	&\iff A\delta x + \delta A x + \delta A \delta x = \delta b \\
+	&\iff A\delta x + \delta A x = \delta b \\
+	&\iff A\delta x = \delta b - \delta A x \\
+	&\iff \delta x = A^{-1}(\delta b - \delta A x)
+\end{alignat*}
+\lstinputlisting[language=Maxima, caption=Maxima input 2017T2-1]{2017T2_1.mc}
+\begin{alignat*}{2}
+		\delta x_1 &= +0.003202\\
+		\delta x_2 &= -0.008847\\
+		\delta x_3 &= +0.004216
+\end{alignat*}
+
+\section{Pergunta 2}
+%\lstinputlisting[language=C++, caption=Programa 2017T2-2 (C++)]{2017T2_2.cpp}
+\begin{equation*}
+	x_1 =
+	\begin{bmatrix}
+		2.124633 \\
+		2.399243 \\
+		3.996406 \\
+		-3.730330
+	\end{bmatrix}
+\end{equation*}
+
+\section{Pergunta 3}
+%\lstinputlisting[language=Python, caption=Programa 2017T2-3 (Python3)]{2017T2_3.py}
+\begin{alignat*}{2}
+	\text{valor do integral} &= 1.3900\\
+	\text{erro estimado}     &= 0.0104
+\end{alignat*}
+\section{Pergunta 4}
+\begin{alignat*}{2}
+	\int\displaylimits_{y_0}^{y_1}{\int\displaylimits_{x_0}^{x_1}{f(x,y)\,dx}\,dy}
+	&= \int\displaylimits_{y_0}^{y_1}{\frac{h}{2}[f(x_0,y)+f(x_1,y)]\,dy}\\
+	&= \frac{h}{2}\left[\int\displaylimits_{y_0}^{y_1}{f(x_0,y)\,dy}+\int\displaylimits_{y_0}^{y_1}{f(x_1,y)\,dy}\right]\\
+	&= \frac{h}{2}\left[\frac{h}{2}[f(x0,y_0)+f(x_0,y_1)]+\frac{h}{2}[f(x1,y_0)+f(x_1,y_1)]\right]\\
+	&= \frac{h^2}{4}[f(x0,y_0)+f(x_0,y_1)+f(x1,y_0)+f(x_1,y_1)]
+\end{alignat*}
+%\lstinputlisting[language=Python, caption=Programa 2017T2-3 (Python3)]{2017T2_4.py}
+O valor do integral é $11.025000$.
+
+\section{Pergunta 5} \label{ssec:17_5}
+Os dois métodos à disposição (regra dos trapézios e regra de Simpson) consistem em somar pequenas parcelas com a mesma largura no domínio de integração. Na regra dos trapézios, a função numa parcela é ajustada a uma reta usando 2 pontos consecutivos, e na regra de Simpson é ajustada a uma parábola usando 3 pontos consecutivos.\\
+Dado que ambos os métodos dependem de somas de parcelas, a primeira estratégia é \textbf{numérica} e consiste em somar as parcelas por ordem de magnitude crescente, uma vez que geralmente diminui erros de truncatura/arredondamento dado que os valores pequenos só são somados com os grandes quando estiverem todos juntos, mitigando assim os eventuais efeitos de somar um valor grande com muitos valores pequenos separadamente (cada soma separada entre um valor grande e um pequeno faz com que os valores pequenos sejam sucessivamente ignorados ou que acumulem erros de truncatura/arredondamento para permitir a soma com o valor grande). Apesar de ser difícil de estimar em quanto é que o erro máximo absoluto é reduzido por adotar esta estratégia, certamente esta estratégia reduz o erro do resultado final.\\
+A segunda estratégia é a escolha do \textbf{método}. Na maior parte dos casos, a regra de Simpson devolve melhores resultados do que a regra dos trapézios. As estimativas dos erros para as regras dos trapézios e de Simpson são respetivamente:
+\begin{center}
+\begin{minipage}[c]{0.5\textwidth}
+\begin{alignat*}{2}
+	-\frac{(x_n-x_0)^3}{12n^3}f''(\xi)
+	&= -\frac{\Delta^3}{12n^3}f''(\xi)
+\end{alignat*}
+\end{minipage}%
+\begin{minipage}[c]{0.5\textwidth}
+\begin{alignat*}{2}
+	-\frac{(x_n-x_0)^5}{90n^4}f''''(\xi)
+	&= -\frac{\Delta^5}{90n^4}f''''(\xi)
+\end{alignat*}
+\end{minipage}
+\end{center}
+Em termos teóricos, a regra de Simpson é melhor dado que, para $\Delta$ fixo, o erro pelos trapézios diminui com a 3ª potência de $n$, enquando que por Simpson diminui com a 4ª potência de $n$. Digo "em termos teóricos" porque se assume que se pode aumentar $n$ indefinidamente, mas, tendo em conta precisão limitada, um $n$ muito grande pode dar origem a erros, pelo que na prática existe um limite ao $n$ acima do qual ocorre "demasiado" erro de arredondamento. Além disso, o erro por Simpson aumenta com a 5ª potência de $\Delta$ em vez da 3ª potência de $\Delta$ pelos trapézios, pelo que, tendo em conta um $n$ limitado, em alguns casos o erro por Simpson pode ser significativamente maior do que pelos trapézios. Assim, esta estratégia consiste em analisar a função e (1) tentar deduzir qual será o método com menor erro (se não houver receios de que o método não possa ser aplicado), ou (2) implementar ambos e passar à próxima fase.\\
+A última estratégia de minimização de erro absoluto máximo é o \textbf{controle de erro}, que consiste em analisar o quociente de convergência, calculado por
+\begin{equation*}
+	QC=\frac{S'-S}{S''-S'}
+\end{equation*}
+onde $S$ é o resultado do método para largura das parcelas $h$, $S'$ o resultado para $h/2$ e $S''$ para h/4.\\ Se o objetivo for obter o melhor resultado possível, deve-se usar o menor $h$ possível tal que $QC = 2^{ordem}$ derivado da fórmula do erro. Este método pode dar origem à situação em que não existe domínio de validade devido à precisão das variáveis utilizadas (ou seja, a transição entre a região de dominância de erros de arredondamento e a de erros de truncação é instantânea ou sobrepõe-se).\\
+Se o objetivo for obter um valor com uma garantia razoavelmente forte de certo erro absoluto máximo, deve-se usar o maior $h$ possível (de forma a poupar trabalho computacional) tal que a estimativa do erro
+\begin{equation*}
+\varepsilon '' = \frac{S''-S}{2^{ordem}-1}
+\end{equation*}
+possua valor absoluto razoavelmente menor do que o erro absoluto máximo pretendido. Depois de encontrado o $h$ que produz $\varepsilon ''$ menor do que o tal erro absoluto máximo, usamos como valor final a integração de passo $h''=h/4$, que tem valor $S''$.
+\section{Pergunta 6}
+Todas as derivadas são em ordem a $t$, que foi renomeada de $x$.
+\begin{alignat*}{2}
+	f_1(x,y,z)&=z\\	
+	f_2(x,y,z)&=A+x^2+xz\\	
+	y'&=f_1(x,y,z)\\	
+	z'&=f_2(x,y,z)
+\end{alignat*}
+%\lstinputlisting[language=Python, caption=Programa 2017T2-6 (Python3)]{2017T2_6.py}
+\begin{center}
+\begin{minipage}[c]{0.5\textwidth}
+\begin{center} Euler:\\ \begin{tabular}{r | c c}
+	$n$ & $t$ & $y$ \\ \hline
+	$0$ & $1.00000$ & $1.00000$ \\
+	$1$ & $1.25000$ & $1.00000$ \\
+	$2$ & $1.50000$ & $1.18750$
+\end{tabular} \end{center}
+\end{minipage}%
+\begin{minipage}[c]{0.5\textwidth}
+\begin{center} Runge-Kutta de 4ª ordem:\\ \begin{tabular}{r | c c}
+	$n$ & $t$ & $y$ \\ \hline
+	$0$ & $1.00000$ & $1.00000$ \\
+	$1$ & $1.25000$ & $1.10908$ \\
+	$2$ & $1.50000$ & $1.52222$
+\end{tabular} \end{center}
+\end{minipage}
+\end{center}
+}
