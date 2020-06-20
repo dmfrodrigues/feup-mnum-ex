@@ -2,11 +2,11 @@
 *.fdb_latexmk
 *.fls
 *.log
-*.pdf
 *.synctex.gz
 *.toc
 *.db
 MNUM_*.out
+MNUM_*.pdf
 
 *.a
 *.app
