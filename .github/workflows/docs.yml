@@ -11,7 +11,7 @@ jobs:
     - uses: actions/checkout@v2
 
     - name: Install latex
-      run: sudo apt install -y latexmk texlive-latex-extra texlive-science
+      run: sudo apt install -y latexmk texlive-latex-extra texlive-science texlive-lang-portuguese
 
     - name: Compile exams
       run: make exam/MNUM_resol_exam.pdf
