@@ -6,6 +6,7 @@
 \RequirePackage[utf8]{inputenc}
 \usepackage{amsmath}
 \usepackage{graphicx}
+\usepackage{enumitem}
 % Listings
 \usepackage{xcolor}
 \usepackage{listings}
