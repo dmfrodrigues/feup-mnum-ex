@@ -1,0 +1,17 @@
+f1:exp(x-y)-sin(x+y);
+f2:x^2*y^2-cos(x+y);
+J:jacobian([f1,f2],[x,y]);
+H:matrix([f1,diff(f1,y)],[f2,diff(f2,y)]);
+K:matrix([diff(f1,x),f1],[diff(f2,x),f2]);
+h:(-determinant(H))/determinant(J);
+k:(-determinant(K))/determinant(J);
+g1:x+h;
+g2:y+k;
+subst([x = -1,y = 0.5],g1);
+subst([x = -1,y = 0.5],g2);
+x0:-1;
+y0:0.5;
+x1:subst([x = x0,y = y0],g1);
+y1:subst([x = x0,y = y0],g2);
+x2:subst([x = x1,y = y1],g1);
+y2:subst([x = x1,y = y1],g2);

@@ -7,6 +7,13 @@
 \usepackage{amsmath}
 \usepackage{graphicx}
 \usepackage{enumitem}
+\usepackage{amssymb,graphicx}
+\usepackage[retain-explicit-plus,retain-zero-exponent]{siunitx}
+% Entire row is bold
+\usepackage{tabularx}
+\newcommand\setrow[1]{\gdef\rowmac{#1}#1\ignorespaces}
+\newcommand\clearrow{\global\let\rowmac\relax}
+\clearrow
 % Listings
 \usepackage{xcolor}
 \usepackage{listings}
@@ -31,6 +38,9 @@
         jacobian,
         matrix,
         determinant,
-        ratsimp
+        ratsimp,
+        subst,
+        sin,
+        cos
     }
 }

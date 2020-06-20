@@ -3,7 +3,7 @@
 {
 \renewcommand{\thesubsection}{\thesection\alph{subsection}}
 
-\section{Problema 1}
+\section{Pergunta 1}
 A função que pretendo minimizar é
 \begin{equation*}
     f(x)=(x-9)^2+x^4
@@ -20,7 +20,7 @@ Os métodos de que dispomos são:
     \item \textbf{Enquadramento intervalar de passo constante}: a partir de um guess, obtém um intervalo que contém o mínimo pesquisando de forma linear uma sucessão decrescente até ela começar a aumentar.
     \item \textbf{Enquadramento intervalar de passo variável}: semelhante a passo constante, mas a pesquisa processa-se com passo variável, geralmente a aumentar por um fator de 2.
 \end{itemize}
-Assim, para resolver este problema, vamos utilizar a seguinte abordagem:
+Assim, para resolver este Pergunta, vamos utilizar a seguinte abordagem:
 \begin{enumerate}
     \item Realizar enquadramento intervalar do mínimo com passo variável.
     \item Efetuar redução intervalar pelo método da razão áurea, até o intervalo ter amplitude máxima $10^{-10}$.
@@ -28,7 +28,7 @@ Assim, para resolver este problema, vamos utilizar a seguinte abordagem:
 \end{enumerate}
 \lstinputlisting[language=Python, caption=Programa 2017E-1 (Python3)]{2017E_1.py}
 
-\section{Problema 2}
+\section{Pergunta 2}
 \lstinputlisting[language=Maxima, caption=Maxima input 2017E-2]{2017E_2.mc}
 \lstinputlisting[language=Python, caption=Programa 2017E-2 (Python3)]{2017E_2.py}
 \begin{center} \begin{tabular}{l | r | r}
@@ -43,7 +43,7 @@ Assim, para resolver este problema, vamos utilizar a seguinte abordagem:
     Erro estimado $\varepsilon''$ & \textbf{-0.00572} & \textbf{-0.00000}
 \end{tabular} \end{center}
 
-\section{Problema 3}
+\section{Pergunta 3}
 \subsection{Item a}
 \lstinputlisting[language=Maxima, caption=Maxima input 2017E-3.1]{2017E_3_1.mc}
 \begin{center} \includegraphics[scale=0.5]{2017E_3_1} \end{center}
@@ -93,7 +93,7 @@ Os resultados empíricos apoiam as conclusões "teóricas":
 \end{itemize}
 Em conclusão, dado que já sabíamos por várias vias o valor aproximado da 2ª raiz (cerca de 1.93), neste caso a melhor solução seria utilizar o método de Newton com esse guess.
 
-\section{Problema 4}
+\section{Pergunta 4}
 \lstinputlisting[language=Python, caption=Programa 2017E-4 (Python3)]{2017E_4.py}
 \begin{center}
     \begin{minipage}[c]{0.5\textwidth}

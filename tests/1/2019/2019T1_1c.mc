@@ -1,0 +1,9 @@
+g0:(exp(x)*(x-1)+11)/(exp(x)-1);
+g1:exp(x)-2-9;
+g2:log(9+x+2);
+g0_:diff(g0,x);
+g1_:diff(g1,x);
+g2_:diff(g2,x);
+plot2d([g0_,abs(g0_)],[x,-15,15],[y,-1,1],[legend,"g_0'","|g_0'|"]);
+plot2d([g1_,abs(g1_)],[x,-15,15],[y,-1,1],[legend,"g_1'","|g_1'|"]);
+plot2d([g2_,abs(g2_)],[x,-15,15],[y,-1,1],[legend,"g_2'","|g_2'|"]);
