@@ -26,6 +26,10 @@
         diff,
         log,
         abs,
-        plot2d
+        plot2d,
+        jacobian,
+        matrix,
+        determinant,
+        ratsimp
     }
 }

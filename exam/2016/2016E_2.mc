@@ -1,0 +1,9 @@
+f1:x^2-y-a;
+f2:(-x)+y^2-b;
+J:jacobian([f1,f2],[x,y]);
+H:matrix([f1,diff(f1,y)],[f2,diff(f2,y)]);
+K:matrix([diff(f1,x),f1],[diff(f2,x),f2]);
+gh:x-determinant(H)/determinant(J);
+gk:y-determinant(K)/determinant(J);
+gh:ratsimp(gh);
+gk:ratsimp(gk);
