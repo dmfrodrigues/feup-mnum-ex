@@ -1,0 +1,29 @@
+\chapter{Exercises 1}
+\section{Problem 1}
+\begin{equation*}
+	f(x)=\sin(10x)+\cos(3x)
+\end{equation*}
+\subsection{Item a}
+Within the interval $[3,6]$ there are 9 roots.
+\begin{center} \includegraphics[height=60mm,keepaspectratio]{EXER1T1-1-a} \end{center}
+
+\subsection{Item b}
+The lowest root is in the interval $[3.2,3.3]$ and the highest root is in the interval $[5.6,5.7]$.\\
+\newpage
+
+\subsection{Item c}
+\begin{center}
+\begin{tabular}{ p{73mm} p{0mm} p{73mm} }
+	Bisection & & False position \\
+	\lstinputlisting[language=C++, caption=EXER1T1-1c\_bisection (C++)]{EXER1T1-1-c_bisection.cpp} & &
+	\lstinputlisting[language=C++, caption=EXER1T1-1c\_falsepos (C++)]{EXER1T1-1-c_falsepos.cpp}
+\end{tabular}
+\end{center}
+\lstinputlisting[caption=Input EXER1T1-1c]{EXER1T1-1-c.in}
+\begin{center}
+\begin{tabular}{ p{74mm} p{0mm} p{74mm} }
+	\lstinputlisting[caption=Output EXER1T1-1c\_bisection]{EXER1T1-1-c_bisection.res}
+	& &
+	\lstinputlisting[caption=Output EXER1T1-1c\_falsepos]{EXER1T1-1-c_falsepos.res}
+\end{tabular}
+\end{center}
