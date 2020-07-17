@@ -1,21 +1,34 @@
 \documentclass{mnum}
-\title{Solved problems for MNUM -- Test 2}
-\author{Diogo Miguel Ferreira Rodrigues (dmfrodrigues2000@gmail.com)}
-\date{}
-\setcounter{tocdepth}{1}
 \usepackage{import}
+\usepackage{standalone}
+\usepackage[portuguese]{babel}
+\usepackage[yyyymmdd,hhmmss]{datetime}
+\renewcommand{\dateseparator}{-}
+% Metadata
+\title{MNUM Test 2 -- solved exercises}
+\author{Diogo Miguel Ferreira Rodrigues \\ (\href{mailto:dmfrodrigues2000@gmail.com}{dmfrodrigues2000@gmail.com})}
+\date{2019/20, 1st semester}
+\setcounter{tocdepth}{2}
 % Document
 \begin{document}
-\begingroup
 \maketitle
-	\let\clearpage\relax
-	\tableofcontents
-\endgroup
-\import{./EXER/}{EXER.tex}
-\import{./REV/}{REV.tex}
-\import{./2012/}{2012T2.tex}
-\import{./2013/}{2013T2.tex}
-\import{./2015/}{2015T2.tex}
-\import{./2016/}{2016T2.tex}
-\import{./2017/}{2017T2.tex}
+\begin{secondpage}
+    Copyright \copyright 2019--\the\year\ Diogo Rodrigues\par
+    \IfFileExists{VERSION}{Version \input{VERSION}}{Draft version}\par
+    \immediate\write18{../../get-commit-info.sh > COMMIT.tex}
+    Built on \today~\currenttime~from \href{https://github.com/dmfrodrigues/feup-mnum-ex}{dmfrodrigues/feup-mnum-ex}, commit \input{COMMIT}\unskip.\par
+    Permission is granted to copy and distribute this document under the terms of the
+    \href{https://creativecommons.org/licenses/by-nc-nd/4.0/}{Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International}
+    public license.
+\end{secondpage}
+\frontmatter
+\tableofcontents
+\mainmatter
+\import{./EXER/}{MNUM_EXER.tex}
+\import{./REV/}{MNUM_REV.tex}
+\import{./2012/}{MNUM_2012T2.tex}
+\import{./2013/}{MNUM_2013T2.tex}
+\import{./2015/}{MNUM_2015T2.tex}
+\import{./2016/}{MNUM_2016T2.tex}
+\import{./2017/}{MNUM_2017T2.tex}
 \end{document}

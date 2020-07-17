@@ -5,7 +5,7 @@
 \usepackage[yyyymmdd,hhmmss]{datetime}
 \renewcommand{\dateseparator}{-}
 % Metadata
-\title{MNUM Test 1 - solved exercises}
+\title{MNUM Test 1 -- solved exercises}
 \author{Diogo Miguel Ferreira Rodrigues \\ (\href{mailto:dmfrodrigues2000@gmail.com}{dmfrodrigues2000@gmail.com})}
 \date{2019/20, 1st semester}
 \setcounter{tocdepth}{2}
@@ -14,19 +14,20 @@
 \maketitle
 \begin{secondpage}
     Copyright \copyright 2019--\the\year\ Diogo Rodrigues\par
-    \IfFileExists{VERSION}{Versão \input{VERSION}}{Versão de rascunho}\par
-    \immediate\write18{../get-commit-info.sh > COMMIT.tex}
-    Compilado em \today~\currenttime~de \href{https://github.com/dmfrodrigues/feup-mnum-ex}{dmfrodrigues/feup-mnum-ex}, commit \input{COMMIT}\unskip.\par
-    É permitida a cópia e redistribuição deste documento sob os termos da licença pública
-    \href{https://creativecommons.org/licenses/by-nc-nd/4.0/}{Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International}.
+    \IfFileExists{VERSION}{Version \input{VERSION}}{Draft version}\par
+    \immediate\write18{../../get-commit-info.sh > COMMIT.tex}
+    Built on \today~\currenttime~from \href{https://github.com/dmfrodrigues/feup-mnum-ex}{dmfrodrigues/feup-mnum-ex}, commit \input{COMMIT}\unskip.\par
+    Permission is granted to copy and distribute this document under the terms of the
+    \href{https://creativecommons.org/licenses/by-nc-nd/4.0/}{Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International}
+    public license.
 \end{secondpage}
 \frontmatter
 \tableofcontents
 \mainmatter
-\import{./EXER1/}{EXER1.tex}
+\import{./EXER1/}{MNUM_EXER1.tex}
 \import{./DESC1/}{DESC1.tex}
 \import{./2012/}{2012T1.tex}
 \import{./2016/}{2016T1.tex}
 \import{./2017/}{2017T1.tex}
-\import{./2019/}{2019T1.tex}
+\import{./2019/}{MNUM_2019T1.tex}
 \end{document}
