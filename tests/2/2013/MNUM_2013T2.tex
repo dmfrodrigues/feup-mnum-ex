@@ -3,5 +3,77 @@
 \author{Diogo Miguel Ferreira Rodrigues (dmfrodrigues2000@gmail.com)}
 % Document
 \begin{document}
-\include{2013T2}	
+
+\setcounter{chapter}{12}
+\exam{Teste 2 2013/14}
+
+\question{Pergunta 1}
+\lstinputlisting[language=Python, caption=Programa 2013T2-1 (Python3)]{2013T2_1.py}
+\questionitem{Item a}
+\begin{center} \begin{tabular}{c | c}
+	$x_1$ & $x_2$ \\ \hline
+	0.27778  &      0.13580 \\
+	-0.16667 &      -0.11111 \\
+	-0.22222 &      -0.08642 \\
+	0.00000  &      -0.20988
+\end{tabular} \end{center}
+\questionitem{Item b}
+Quanto à convergência do processo iterativo, \textbf{o método converge porque em cada linha da matriz $A$, o módulo do elemento da diagonal principal é superior ao módulo da soma dos restantes elementos da linha.}
+
+\question{Pergunta 2}
+\lstinputlisting[language=Python, caption=Programa 2013T2-2 (Python3)]{2013T2_2.py}
+\questionitem{Item a}
+\begin{center} \begin{tabular}{c | c}
+	$t$ & $x$ \\ \hline
+	1.000 & 1.000000 \\
+	\textbf{1.125} & \textbf{1.205376} \\
+	1.250 & 1.358850 \\
+	\textbf{1.375} & \textbf{1.459099} \\
+	1.500 & 1.512221
+\end{tabular} \end{center}
+\questionitem{Item b}
+\begin{equation*}
+	QC=20.478955
+\end{equation*}
+\questionitem{Item c}
+Escolheria $0.125$, dado que o erro estimado $\varepsilon''$ para $S''$ é cerca de 20 vezes menor do que o erro estimado $\varepsilon'$ para $S'$.
+
+\question{Pergunta 3}
+\lstinputlisting[language=Python, caption=Programa 2013T2-3 (Python3)]{2013T2_3.py}
+\begin{center} \begin{tabular}{l | r r}
+	& M. Trapézios & M. Simpson \\ \hline
+	$h$ & 0.25 & 0.25 \\
+	$h'$ & \textbf{0.125} & \textbf{0.125} \\
+	$h''$ & 0.0625 & 0.0625 \\
+	Comprimento do arco $L_1=l  $  & \textbf{3.68921} & \textbf{3.64747} \\
+	Comprimento do arco $L_2=l' $  & \textbf{3.65765} & \textbf{3.64713} \\
+	Comprimento do arco $L_3=l''$  & \textbf{3.64975} & \textbf{3.64711} \\
+	Quociente de convergência $QC$ & \textbf{3.99180} & \textbf{15.79661} \\
+	Erro estimado $\epsilon$       & \textbf{-0.00264} & \textbf{-0.00000}
+\end{tabular} \end{center}
+
+\question{Pergunta 4}
+\lstinputlisting[language=Python, caption=Programa 2013T2-4 (Python3)]{2013T2_4.py}
+\questionitem{Item a}
+\begin{center} \begin{tabular}{c | c c c}
+	iteração & $t$ & $C$  & $T$ \\ \hline
+	0 & 0.0 & \textbf{2.000000} & \textbf{20.000000} \\
+	1 & \textbf{0.2} & \textbf{1.600682} & \textbf{27.986360} \\
+	2 & 0.4 & \textbf{1.281077} & \textbf{33.579824}
+\end{tabular} \end{center}
+\questionitem{Item b}
+\begin{center} \begin{tabular}{c | c c c}
+	iteração & $t$ & $C$ & $T$ \\ \hline
+	0 & 0.0 & \textbf{2.000000} & \textbf{20.000000} \\
+	1 & \textbf{0.2} & \textbf{1.638018} & \textbf{26.877874} \\
+	2 & 0.4 & \textbf{1.341543} & \textbf{31.856566}
+\end{tabular} \end{center}
+\questionitem{Item c}
+\begin{center} \begin{tabular}{c | c || c | c}
+	$h' $ & \textbf{0.20000} & $C_{h' }$ & \textbf{1.60068} \\
+	$h''$ & \textbf{0.10000} & $C_{h''}$ & \textbf{1.62061} \\
+	      &         & Quociente de convergência & \textbf{2.21864} \\
+	      &         & Erro estimado & \textbf{0.00299}
+\end{tabular} \end{center}
+
 \end{document}
