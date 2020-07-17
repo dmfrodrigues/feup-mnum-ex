@@ -1,19 +1,28 @@
 \documentclass{mnum}
-% Hyperreferences
-\usepackage{hyperref}
 \usepackage{import}
-
-\title{Solved problems for MNUM -- Test 1}
-\author{Diogo Miguel Ferreira Rodrigues (dmfrodrigues2000@gmail.com)}
-\date{}
-\setcounter{tocdepth}{1}
+\usepackage{standalone}
+\usepackage[portuguese]{babel}
+\usepackage[yyyymmdd,hhmmss]{datetime}
+\renewcommand{\dateseparator}{-}
+% Metadata
+\title{MNUM Test 1 - solved exercises}
+\author{Diogo Miguel Ferreira Rodrigues \\ (\href{mailto:dmfrodrigues2000@gmail.com}{dmfrodrigues2000@gmail.com})}
+\date{2019/20, 1st semester}
+\setcounter{tocdepth}{2}
 % Document
 \begin{document}
-\begingroup
 \maketitle
-	\let\clearpage\relax
-	\tableofcontents
-\endgroup
+\begin{secondpage}
+    Copyright \copyright 2019--\the\year\ Diogo Rodrigues\par
+    \IfFileExists{VERSION}{Versão \input{VERSION}}{Versão de rascunho}\par
+    \immediate\write18{../get-commit-info.sh > COMMIT.tex}
+    Compilado em \today~\currenttime~de \href{https://github.com/dmfrodrigues/feup-mnum-ex}{dmfrodrigues/feup-mnum-ex}, commit \input{COMMIT}\unskip.\par
+    É permitida a cópia e redistribuição deste documento sob os termos da licença pública
+    \href{https://creativecommons.org/licenses/by-nc-nd/4.0/}{Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International}.
+\end{secondpage}
+\frontmatter
+\tableofcontents
+\mainmatter
 \import{./EXER1/}{EXER1.tex}
 \import{./DESC1/}{DESC1.tex}
 \import{./2012/}{2012T1.tex}

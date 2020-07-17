@@ -44,3 +44,40 @@
 \newcommand\comb[2]{^{#1}C_{#2}}
 \usepackage{mathtools} %dcases
 \newcommand\realset{\mathbb{R}}
+% Copyright page
+\newenvironment{secondpage}{
+    \clearpage\null\vfill
+    \thispagestyle{empty}
+    \begin{minipage}[b]{0.9\textwidth}
+        \footnotesize\raggedright
+        \setlength{\parskip}{0.5\baselineskip}
+}{
+    \end{minipage}
+    \vspace*{2\baselineskip}
+}
+% Some work
+\def\title#1{\gdef\@title{#1}\gdef\@@title{#1}}
+\def\author#1{\gdef\@author{#1}\gdef\@@author{#1}}
+\let\@@title\@empty
+\let\@@author\@empty
+% Headers and footers
+\RequirePackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancyhead[RE, LO]{\textit{\leftmark}}
+\fancyhead[LE, RO]{\thepage}
+\fancyfoot[LE, RO]{\ifx\@@author\@empty\else\@@author\fi}
+% Sections
+\makeatletter
+\renewcommand\thesection{\thechapter\ifnum\c@section>\z@ -P\arabic{section}\fi}
+\renewcommand\thesubsection{\thesection-\arabic{subsection}}
+\renewcommand\thesubsubsection{\thesubsection\alph{subsubsection}}
+\makeatother
+% Alias
+\setcounter{secnumdepth}{-2}
+\newcommand\exam[1]{\chapter{#1}}
+\newcommand\exampart[1]{\section{#1}}
+\newcommand\question[1]{\subsection{#1}}
+\newcommand\questionitem[1]{\subsubsection{#1}}

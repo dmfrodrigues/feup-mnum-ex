@@ -1,9 +1,9 @@
 \setcounter{chapter}{15}
-\chapter{Exame 2016/17}
+\exam{Exame 2016/17}
 {
 \renewcommand{\thesubsection}{\thesection\alph{subsection}}
 
-\section{Pergunta 1}
+\question{Pergunta 1}
 \begin{enumerate}
     \item
     \textbf{Vantagens}: uma iteração custa uma só soma; evita erros de arredondamento nem de truncatura (dado que operações com inteiros devolvem resultados exatos), apenas possivelmente de \textit{overflow}.\\
@@ -19,7 +19,7 @@
     \textbf{Desvantagens}: Não ultrapassa o valor $x_0+1$; depois de poucas iterações (cerca de 60 num float de 64 bits), o incremento já não é representável através de floats por ser demasiado pequeno.
 \end{enumerate}
 
-\section{Pergunta 2}
+\question{Pergunta 2}
 \lstinputlisting[language=Maxima, caption=Maxima input 2016E-1]{2016E_2.mc}
 \lstinputlisting[language=Python, caption=Programa 2016E-2 (Python3)]{2016E_2.py}
 \begin{center}
@@ -31,24 +31,24 @@
     \end{tabular}
 \end{center}
 
-\section{Pergunta 3}
-\subsection{Item a}
+\question{Pergunta 3}
+\questionitem{Item a}
 Método de Levenberg-Marquardt, que consiste em utilizar em simultâneo o passo de quádrica e o passo de gradiente associado a um fator $\lambda$ que diminui quando o passo é bem-sucessido (diminui importância do gradiente), e aumenta quando o passo é mal-sucedido (aumenta importância do gradiente).
 
-\subsection{Item b}
+\questionitem{Item b}
 As principais vantagens são:
 \begin{itemize}
     \item Bom desempenho geral, tanto perto como longe do mínimo, dado que associa duas técnicas adequadas a cada uma das situações, atribuindo-lhes pesos diferentes consoante o processo se está a desenrolar e a fase em que se encontra (longe ou perto do mínimo).
     \item Muito melhor desempenho em situações difíceis, o que não se verifica especificamente neste caso dado que não existem zonas alongadas com valores da função próximos do mínimo.
 \end{itemize}
 
-\subsection{Item c}
+\questionitem{Item c}
 O principal Pergunta é tratar-se de programação não-convexa (ou seja, a função não possui apenas um mínimo local na região em análise). Uma forma de resolver o Pergunta é realizar uma pesquisa "linear" pelos valores da função, e escolher como ponto de partida o ponto analizado em que o valor da função é menor; ou representar a função graficamente, e delegar a escolha de um guess adequado ao operador da máquina. Neste caso, dado que o enunciado fornece o gráfico da função, o operador pode identificar um guess que, com grande probabilidade e uma escolha correta de parâmetros, conduza ao mínimo absoluto da função.\par
 Para lidar com este Pergunta, podemos ainda adotar a perspetiva de que pretendemos encontrar apenas um mínimo local, não necessariamente um mínimo absoluto, e terminarmos a pesquisa ao encontrar um mínimo local qualquer.
 
 \newpage
 
-\section{Pergunta 4}
+\question{Pergunta 4}
 \lstinputlisting[language=Python, caption=Programa 2016E-4 (Python3)]{2016E_4.py}
 \begin{center}
     \begin{tabular}{c | c | c | c | c | c}
@@ -69,7 +69,7 @@ Para lidar com este Pergunta, podemos ainda adotar a perspetiva de que pretendem
     \end{tabular}
 \end{center}
 
-\section{Pergunta 5}
+\question{Pergunta 5}
 \begin{alignat*}{2}
     \frac{d^2y}{dt^2}=A+t^2+t\frac{dy}{dt} \iff
     \begin{cases}
@@ -103,7 +103,7 @@ Para lidar com este Pergunta, podemos ainda adotar a perspetiva de que pretendem
     \end{minipage}
 \end{center}
 
-\section{Pergunta 6}
+\question{Pergunta 6}
 \lstinputlisting[language=Maxima, caption=Maxima input 2016E-6]{2016E_6.mc}
 \lstinputlisting[language=Python, caption=Programa 2016E-6 (Python3)]{2016E_6.py}
 \begin{center}

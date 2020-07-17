@@ -13,3 +13,5 @@ MNUM_*.pdf
 *.exe
 *.zip
 *.xlsx
+COMMIT.tex
+.vscode

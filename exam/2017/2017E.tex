@@ -1,9 +1,9 @@
 \setcounter{chapter}{16}
-\chapter{Exame 2017/18}
+\exam{Exame 2017/18}
 {
 \renewcommand{\thesubsection}{\thesection\alph{subsection}}
 
-\section{Pergunta 1}
+\question{Pergunta 1}
 A função que pretendo minimizar é
 \begin{equation*}
     f(x)=(x-9)^2+x^4
@@ -28,7 +28,7 @@ Assim, para resolver este Pergunta, vamos utilizar a seguinte abordagem:
 \end{enumerate}
 \lstinputlisting[language=Python, caption=Programa 2017E-1 (Python3)]{2017E_1.py}
 
-\section{Pergunta 2}
+\question{Pergunta 2}
 \lstinputlisting[language=Maxima, caption=Maxima input 2017E-2]{2017E_2.mc}
 \lstinputlisting[language=Python, caption=Programa 2017E-2 (Python3)]{2017E_2.py}
 \begin{center} \begin{tabular}{l | r | r}
@@ -43,8 +43,8 @@ Assim, para resolver este Pergunta, vamos utilizar a seguinte abordagem:
     Erro estimado $\varepsilon''$ & \textbf{-0.00572} & \textbf{-0.00000}
 \end{tabular} \end{center}
 
-\section{Pergunta 3}
-\subsection{Item a}
+\question{Pergunta 3}
+\questionitem{Item a}
 \lstinputlisting[language=Maxima, caption=Maxima input 2017E-3.1]{2017E_3_1.mc}
 \begin{center} \includegraphics[scale=0.5]{2017E_3_1} \end{center}
 Dado que a função é contínua, os seguintes argumentos são suficientes para justificar os intervalos das raízes.
@@ -53,7 +53,7 @@ Dado que a função é contínua, os seguintes argumentos são suficientes para 
     \item A 2ª raiz pertence ao intervalo $x_2 \in [1,3]$, em que a função é monótona crescente e passa de negativa $f(1)=-3.28172$ para positiva $f(3)=12.08554$
 \end{itemize}
 
-\subsection{Item b}
+\questionitem{Item b}
 \lstinputlisting[language=Maxima, caption=Maxima input 2017E-3.2]{2017E_3_2.mc}
 \begin{center} \includegraphics[scale=0.5]{2017E_3_2} \end{center}
 Para $x \leq -5$, a fórmula 2 devolve um valor complexo, pelo que iremos considerar como importante a parte da fórmula 2 em que $x > -5$.
@@ -69,7 +69,7 @@ Fazendo um estudo exploratório no Maxima,
     \item Converge para $x_2=1.93685$ em $(-5, +\infty)$.
 \end{enumerate}
 
-\subsection{Item c}
+\questionitem{Item c}
 Pela alínea anterior, concluímos que a fórmula 1 não é adequada para a determinação por convergência iterativa da raiz $x_2$ (dado que é um ponto de equilíbrio instável, que poderia ser determinado com outro tipo de análise). Assim, das fórmulas dadas sobra apenas a fórmula 2.\par
 Em termos de métodos não-intervalares para encontrar soluções de equações, a única alternativa a Picard-Peano lecionada na UC é o método de Newton. Também conhecido como método da tangente, consiste em, a partir do valor anterior $x_{n-1}$, traçar uma reta tangente à função e que passa em $(x_{n-1}, f(x_{n-1}))$, e tomar como valor melhorado $x_n$ a abcissa da interseção dessa reta com o eixo das abcissas.
 \lstinputlisting[language=Maxima, caption=Maxima input 2017E-3.3]{2017E_3_3.mc}
@@ -93,11 +93,11 @@ Os resultados empíricos apoiam as conclusões "teóricas":
 \end{itemize}
 Em conclusão, dado que já sabíamos por várias vias o valor aproximado da 2ª raiz (cerca de 1.93), neste caso a melhor solução seria utilizar o método de Newton com esse guess.
 
-\section{Pergunta 4}
+\question{Pergunta 4}
 \lstinputlisting[language=Python, caption=Programa 2017E-4 (Python3)]{2017E_4.py}
 \begin{center}
     \begin{minipage}[c]{0.5\textwidth}
-        \subsection{Item a}
+        \questionitem{Item a}
         \begin{center} \begin{tabular}{c | r | r | r}
             Iteração & $t$ & $C$ & $T$ \\ \hline
             0        & 0.00000 & \textbf{2.50000} & \textbf{25.00000} \\
@@ -106,7 +106,7 @@ Em conclusão, dado que já sabíamos por várias vias o valor aproximado da 2ª
         \end{tabular} \end{center}
     \end{minipage}%
     \begin{minipage}[c]{0.5\textwidth}
-        \subsection{Item b}
+        \questionitem{Item b}
         \begin{center} \begin{tabular}{c | r | r | r}
             Iteração & $t$ & $C$ & $T$ \\ \hline
             0        & 0.00000 & \textbf{2.50000} & \textbf{25.00000} \\
@@ -115,7 +115,7 @@ Em conclusão, dado que já sabíamos por várias vias o valor aproximado da 2ª
         \end{tabular} \end{center}
     \end{minipage}%
 \end{center}
-\subsection{Item c}
+\questionitem{Item c}
 \begin{center} \begin{tabular}{c | r || c | r}
     $h' $ & \textbf{0.12500} & $T_{h' }$ & \textbf{51.77067} \\
     $h' $ & \textbf{0.06250} & $T_{h' }$ & \textbf{50.69205} \\
@@ -123,6 +123,6 @@ Em conclusão, dado que já sabíamos por várias vias o valor aproximado da 2ª
           &                  & Erro absoluto estimado & \textbf{-1.07861}
 \end{tabular} \end{center}
 
-\section{Pergunta 5}
+\question{Pergunta 5}
 \lstinputlisting[language=Python, caption=Programa 2017E-5 (Python3)]{2017E_5.py}
 }

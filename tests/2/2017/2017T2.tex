@@ -1,8 +1,8 @@
 \setcounter{chapter}{16}
-\chapter{Teste 2 2017/18}
+\exam{Teste 2 2017/18}
 {
 \renewcommand{\thesubsection}{\thesection\alph{subsection}}
-\section{Pergunta 1}
+\question{Pergunta 1}
 \begin{equation*}
 	Ax=b
 \end{equation*}
@@ -21,7 +21,7 @@
 		\delta x_3 &= +0.004216
 \end{alignat*}
 
-\section{Pergunta 2}
+\question{Pergunta 2}
 %\lstinputlisting[language=C++, caption=Programa 2017T2-2 (C++)]{2017T2_2.cpp}
 \begin{equation*}
 	x_1 =
@@ -33,13 +33,13 @@
 	\end{bmatrix}
 \end{equation*}
 
-\section{Pergunta 3}
+\question{Pergunta 3}
 %\lstinputlisting[language=Python, caption=Programa 2017T2-3 (Python3)]{2017T2_3.py}
 \begin{alignat*}{2}
 	\text{valor do integral} &= 1.3900\\
 	\text{erro estimado}     &= 0.0104
 \end{alignat*}
-\section{Pergunta 4}
+\question{Pergunta 4}
 \begin{alignat*}{2}
 	\int\displaylimits_{y_0}^{y_1}{\int\displaylimits_{x_0}^{x_1}{f(x,y)\,dx}\,dy}
 	&= \int\displaylimits_{y_0}^{y_1}{\frac{h}{2}[f(x_0,y)+f(x_1,y)]\,dy}\\
@@ -50,7 +50,7 @@
 %\lstinputlisting[language=Python, caption=Programa 2017T2-3 (Python3)]{2017T2_4.py}
 O valor do integral é $11.025000$.
 
-\section{Pergunta 5} \label{ssec:17_5}
+\question{Pergunta 5} \label{ssec:17_5}
 Os dois métodos à disposição (regra dos trapézios e regra de Simpson) consistem em somar pequenas parcelas com a mesma largura no domínio de integração. Na regra dos trapézios, a função numa parcela é ajustada a uma reta usando 2 pontos consecutivos, e na regra de Simpson é ajustada a uma parábola usando 3 pontos consecutivos.\\
 Dado que ambos os métodos dependem de somas de parcelas, a primeira estratégia é \textbf{numérica} e consiste em somar as parcelas por ordem de magnitude crescente, uma vez que geralmente diminui erros de truncatura/arredondamento dado que os valores pequenos só são somados com os grandes quando estiverem todos juntos, mitigando assim os eventuais efeitos de somar um valor grande com muitos valores pequenos separadamente (cada soma separada entre um valor grande e um pequeno faz com que os valores pequenos sejam sucessivamente ignorados ou que acumulem erros de truncatura/arredondamento para permitir a soma com o valor grande). Apesar de ser difícil de estimar em quanto é que o erro máximo absoluto é reduzido por adotar esta estratégia, certamente esta estratégia reduz o erro do resultado final.\\
 A segunda estratégia é a escolha do \textbf{método}. Na maior parte dos casos, a regra de Simpson devolve melhores resultados do que a regra dos trapézios. As estimativas dos erros para as regras dos trapézios e de Simpson são respetivamente:
@@ -79,7 +79,7 @@ Se o objetivo for obter um valor com uma garantia razoavelmente forte de certo e
 \varepsilon '' = \frac{S''-S}{2^{ordem}-1}
 \end{equation*}
 possua valor absoluto razoavelmente menor do que o erro absoluto máximo pretendido. Depois de encontrado o $h$ que produz $\varepsilon ''$ menor do que o tal erro absoluto máximo, usamos como valor final a integração de passo $h''=h/4$, que tem valor $S''$.
-\section{Pergunta 6}
+\question{Pergunta 6}
 Todas as derivadas são em ordem a $t$, que foi renomeada de $x$.
 \begin{alignat*}{2}
 	f_1(x,y,z)&=z\\	
