@@ -1,7 +1,6 @@
 \setcounter{chapter}{11}
 \exam{Teste 2 2012/13}
-{
-\renewcommand{\thesubsection}{\thesection\alph{subsection}}
+
 \question{Pergunta 1}
 \lstinputlisting[language=Python, caption=Programa 2012T2-1 (Python3)]{2012T2_1.py}
 Resposta: $10.65600$
@@ -53,4 +52,3 @@ A não ser que numa das elipses de (b) haja referência a um caso base, o códig
 Ignorando esse facto, existem dois aspetos diferentes entre os dois fragmentos de código: o cálculo da diferença entre iterações consecutivas, e o momento do incremento.\\
 Em (a), é calculada a diferença entre o valor atual e o valor anterior $S-S0$ para determinar o momento de paragem, enquanto que em (b) é usado o mesmo critério mas utilizando o valor que será incrementado $S0$. A estratégia de (a) conduz a maior erro numérico na determinação da diferença entre iterações consecutivas, dado que o valor da diferença pode ser relativamente pequeno quando comparado com os valores do integral, e que essa diferença é calculada entre o valor anterior e o valor anterior mais o incremento. Assim, em (b) o incremento possui apenas o erro associado ao seu cálculo, enquanto que em (a) existe mais uma parcela de erro associado a operações intermédias e desnecessárias. Isto significa que o momento de paragem pode ser determinado de forma diferente nos dois métodos por influência de erros, conduzindo naturalmente a valores diferentes dos resultados.\\
 Além disso, em (a) primeiro é realizado o incremento e depois é que é avaliado se esse incremento foi menor ou igual a $eps$, enquanto que em (b) é primeiro avaliado se o incremento é maior do que $eps$ e só depois é que é incrementado ao integral. Por este motivo, mesmo que não ocorram erros numéricos, os resultados são necessariamente diferentes.
-}

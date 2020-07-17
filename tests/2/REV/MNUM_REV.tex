@@ -1,11 +1,50 @@
-\documentclass[a4paper]{article}
-% Hyperreferences
-\usepackage{hyperref}
-% TCOM style
-\usepackage[title={MNUM - Teste 2 Revisoes},
-            author={Diogo Miguel Ferreira Rodrigues},
-            email={up201806429@fe.up.pt}]{simplereport}
+\documentclass{mnum}
+\usepackage[portuguese]{babel}
+% Metadata
+\title{MNUM Teste 2 -- Revisões}
+\author{Diogo Miguel Ferreira Rodrigues \\ \href{mailto:up201806429@fe.up.pt}{up201806429@fe.up.pt}}
 % Document
 \begin{document}
-\include{REV}
+
+\setcounter{chapter}{0}
+\exam{Teste 2 Revisões}
+
+\question{Pergunta 1}
+%\lstinputlisting[language=Python, caption=Programa REV-1 (Python3)]{REV_1.py}
+\begin{equation*}
+	x_0 = \begin{bmatrix}
+		4.00000 \\
+		8.00000 \\
+		-2.00000
+	\end{bmatrix}
+\end{equation*}
+\questionitem{Item a}
+A estabilidade interna para os erros apresentados no enunciado é
+\begin{equation*}
+	\delta x = \begin{bmatrix}
+		0.44155 \\
+		0.61528 \\
+		-0.10858
+	\end{bmatrix}
+\end{equation*}
+Através desta breve análise, pode-se concluir que $x_3$ é a incógnita menos afetada por erros externos, seguida de $x_1$ e de $x_2$ por esta ordem.
+\questionitem{Item b}
+Os resíduos são
+\begin{equation*}
+	\varepsilon _0 = \begin{bmatrix}
+		0.00000e+00 \\
+		-7.10543e-15 \\
+		0.00000e+00
+	\end{bmatrix}
+\end{equation*}
+A estabilidade interna é
+\begin{equation*}
+	\delta = \begin{bmatrix}
+		2.47642e-16 \\
+		2.28593e-16 \\
+		-8.76273e-16
+	\end{bmatrix}
+\end{equation*}
+Estes valores da estabilidade interna indiciam que $x_3$ é a incógnita mais afetada por erros de arredondamento associados ao algoritmo, seguida de $x_1$ e de $x_2$.
+
 \end{document}
