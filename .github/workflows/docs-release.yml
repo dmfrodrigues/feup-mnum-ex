@@ -1,14 +1,21 @@
-name: docs
+name: docs-release
 
 on:
   push:
-    branches: [ master ]
+    tags:
+      - 'v*'
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
+
+    - name: Set version
+      run: echo ::set-env name=VERSION::${GITHUB_REF#refs/*/}
+
+    - name: Checkout right version
+      run: git checkout $(git rev-list -n 1 $VERSION)
 
     - name: Install latex
       run: sudo apt install -y latexmk texlive-latex-extra texlive-science texlive-lang-portuguese
@@ -17,7 +24,7 @@ jobs:
       run: chmod u+x *.sh
 
     - name: Compile exams
-      run: make exam/MNUM_resol_exam.pdf
+      run: make exam/MNUM_resol_exam.pdf VERSION=${VERSION:1:100}
     - name: Upload exams
       uses: actions/upload-artifact@v2
       with:
@@ -25,7 +32,7 @@ jobs:
         path: exam/MNUM_resol_exam.pdf
 
     - name: Compile test1
-      run: make tests/1/MNUM_resol_teste1.pdf
+      run: make tests/1/MNUM_resol_teste1.pdf VERSION=${VERSION:1:100}
     - name: Upload exams
       uses: actions/upload-artifact@v2
       with:
@@ -33,11 +40,9 @@ jobs:
         path: tests/1/MNUM_resol_teste1.pdf
 
     - name: Compile test2
-      run: make tests/2/MNUM_resol_teste2.pdf
+      run: make tests/2/MNUM_resol_teste2.pdf VERSION=${VERSION:1:100}
     - name: Upload exams
       uses: actions/upload-artifact@v2
       with:
         name: MNUM_resol_teste2.pdf
         path: tests/2/MNUM_resol_teste2.pdf
-
-

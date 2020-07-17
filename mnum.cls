@@ -1,5 +1,5 @@
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{mnumstyle}
+\ProvidesClass{mnum}
 
 \LoadClass[a4paper]{book}
 \raggedbottom
