@@ -13,8 +13,9 @@
 ## Contents
 
 - [Theoretical-practical classes](tp)
-- [First test solutions](tests/1)
-- [Second test solutions](tests/2)
+- [Tests solutions](tests)
+  - [First test solutions](tests/1)
+  - [Second test solutions](tests/2)
 - [Final exam solutions](exam)
 
 ## Documents
